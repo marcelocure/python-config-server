@@ -20,7 +20,5 @@ with app.app_context():
     temp_folder = __build_temp_folder()
     Repo.clone_from("https://github.com/marcelocure/config.git", temp_folder)
     __cache_configs(temp_folder)
-    print 'will import routes'
     import routes
-    print 'imported routes'
-    app.run(debug=True)
+    app.run(debug=True, port=5050)

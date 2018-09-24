@@ -1,1 +1,1 @@
-import consulta
+import config_server
