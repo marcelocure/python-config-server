@@ -3,7 +3,7 @@ from flask import Flask
 from git import Repo
 from random import choice
 from string import ascii_letters, digits
-from cache import add_to_cache, get_from_cache
+from cache import add_to_cache, set_repo_folder
 from reader import read_dir
 app = Flask(__name__)
 
@@ -18,6 +18,7 @@ def __build_temp_folder():
 
 with app.app_context():
     temp_folder = __build_temp_folder()
+    set_repo_folder(temp_folder)
     Repo.clone_from("https://github.com/marcelocure/config.git", temp_folder)
     __cache_configs(temp_folder)
     import routes
