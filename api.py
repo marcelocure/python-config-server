@@ -10,7 +10,6 @@ def __build_temp_folder():
     return "/tmp/"+random_string
 
 with app.app_context():
-    print 'run'
     temp_folder = __build_temp_folder()
     clone_and_cache(temp_folder)
     import routes
