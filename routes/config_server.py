@@ -9,5 +9,12 @@ from git_repository import pull
 
 @app.route('/config/<service>', methods=['GET'])
 def get_config(service):
-    pull(get_repo_folder())
     return jsonify(get_from_cache(service)), 200
+
+@app.route('/config/refresh', methods=['POST'])
+def refresh_config():
+    try:
+        pull(get_repo_folder())
+        return jsonify({}), 200
+    except Exception as e:
+        return jsonify({ 'error': str(e) }), 500
