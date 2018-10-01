@@ -17,3 +17,8 @@ On `POST /config/refresh` it does a `git pull` and populates cache
 
 ## How to run?
 `python src/api.py`
+
+## How to run with docker?
+Build image: `docker build . -t configserver`
+
+Run `docker run --net host <imageId here>`
