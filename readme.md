@@ -22,3 +22,5 @@ On `POST /config/refresh` it does a `git pull` and populates cache
 Build image: `docker build . -t configserver`
 
 Run `docker run --net host <imageId here>`
+
+API will be available at: http://localhost:5050/
