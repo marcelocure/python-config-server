@@ -8,12 +8,12 @@ It has 2 endpoints available:
 ## How does it work?
 On startup, it clones a git repository informed on config.py and caches its data locally
 
-On GET /config/{service name}, it gets the config for the given service name on the local cache
+On `GET /config/{service name}`, it gets the config for the given service name on the local cache
 
-On POST /config/refresh it does a `git pull` and populates cache
+On `POST /config/refresh` it does a `git pull` and populates cache
 
 ## How to install?
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ## How to run?
-python src/api.py
+`python src/api.py`
